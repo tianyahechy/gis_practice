@@ -325,8 +325,35 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 
 		case WM_KEYDOWN:
 		{
-			
-			vEyePt -= D3DXVECTOR3(1, 0, 0);
+			 if (wParam == VK_UP)
+			 {
+			   vEyePt -= D3DXVECTOR3(1, 0, 0);
+			 }
+			 else
+			 if (wParam == VK_DOWN)
+			 {
+				 vEyePt += D3DXVECTOR3(1, 0, 0);
+			 }
+			 else
+			 if ((wParam == 'w') || (wParam == 'W'))
+			 {
+				 vEyePt += D3DXVECTOR3(0, 0, 1);
+			 }
+			 else
+			 if ((wParam == 's') || (wParam == 'S'))
+			 {
+				 vEyePt += D3DXVECTOR3(0, 0, -1);
+			 }
+			 else
+			 if ((wParam == 'A') || (wParam == 'a'))
+			 {
+				 vEyePt += D3DXVECTOR3(0, -1, 0);
+			 }
+			 else
+			 if ((wParam == 'D') || (wParam == 'd'))
+			 {
+				 vEyePt += D3DXVECTOR3(0, 1, 0);
+			 }
 		}
 		break;
     }
